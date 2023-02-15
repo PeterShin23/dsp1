@@ -3,6 +3,7 @@
 ## SRC
 
 ### Installing/Building Code
+All source code for this project is located in the SRC folder in this repository....
 
 ### Code Usage
 
@@ -24,6 +25,7 @@ https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products?f
 ### Revelant Notes
 
 ## FIGURES
+
 
 ## REFERENCES
 
