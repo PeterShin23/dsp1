@@ -9,6 +9,10 @@
 ## DATA
 
 ### Data Dictionary
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 ### Link to Data
 
