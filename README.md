@@ -26,7 +26,7 @@ Link to data: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-ama
 - We removed all "reviews.text" empty/null entries
 
 ## FIGURES
-![alt text](https://github.com/lucywang-uva/dsp1/blob/main/top20_all.png?raw=true)
+![alt text](https://github.com/lucywang-uva/dsp1/blob/main/figures/top20_all.png?raw=true)
 
 
 ## REFERENCES
