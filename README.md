@@ -26,6 +26,9 @@ Link to data: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-ama
 - We removed all "reviews.text" empty/null entries
 
 ## FIGURES
+figure file name  | figure title  | figure summary
+------------- | ------------- | -------------
+top20_all.png  | Count of Top 20 Words Over All Reviews | key findings...
 
 
 
