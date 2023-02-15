@@ -34,13 +34,15 @@ from sklearn.linear_model import LogisticRegression
 #os.getcwd()
 
 data = pd.read_csv('Documents/consumer.csv') 
-df = data[["reviews.text", "reviews.rating"]]
+df = data[["reviews.text", "reviews.rating"]] #subset text and rating
 
 # drop any rows w/ missing values
 df = df.dropna()
-# discover the actual counts
+
+# rating counts
 df = df.rename(columns={"reviews.text": "text", "reviews.rating": "rating"})
 rating_counts = df.rating.value_counts() 
+
 # set sample size to labels w/ minimum count
 sample_size = 402
 df_equal_rating = pd.DataFrame()
@@ -143,11 +145,6 @@ plt.title("Count of Top 10 Words in Reviews with Rating 1")
 plt.xticks(rotation=60)
 
 
-
-
-
-
-
 #rating 5
 review_text_5 = clean_data[clean_data['rating'] == 5.0]
 review_text_5 = review_text_5['review_cleaned_lemmatized']
@@ -173,10 +170,6 @@ plt.xlabel("Word")
 plt.ylabel("Count")
 plt.title("Count of Top 10 Words in Reviews with Rating 5")
 plt.xticks(rotation=60)
-
-
-
-
 
 
 
