@@ -1,4 +1,4 @@
-# project 1 for DS 4002 @ UVA
+# Amazon Reviews Sentiment Anaysis
 
 ## SRC
 
