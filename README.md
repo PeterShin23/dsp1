@@ -19,6 +19,7 @@ reviews.text  | Content of Review
 reviews.title  | Title/header of review
 
 ### Link to Data
+https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products?fbclid=IwAR0yIq8hjHkHZTXoqGVG2xiIQunCDA0JI1ChlZ5XhSZulLyZReaQnheRv-4&select=1429_1.csv
 
 ### Revelant Notes
 
