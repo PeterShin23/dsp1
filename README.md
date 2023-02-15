@@ -40,5 +40,8 @@ rating_distribution  | Frequency of Ratings Over All Reviews | The distribution 
 ## REFERENCES
 [1]	“Consumer reviews of Amazon Products,” Kaggle, 20-May-2019. [Online]. Available: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products?Fbclid=IwAR0yIq8hjHkHZTXoqGVG2xiIQunCDA0JI1ChlZ5XhSZulLyZReaQnheRv-4&select=1429_1.csv. [Accessed: 14-Feb-2023]. 
 
+[2]	“Amazon ecommerce trends for 2023,” Insider Intelligence, 06-Jan-2023. [Online]. Available: https://www.insiderintelligence.com/insights/amazon-ecommerce-trends/. [Accessed: 08-Feb-2023]. 
+
+
 
 
