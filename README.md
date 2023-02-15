@@ -28,8 +28,7 @@ Link to data: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-ama
 ## FIGURES
 File Name  | Title  | Summary
 ------------- | ------------- | -------------
-top20_all  | Count of Top 20 Words Over All Reviews | key findings... \n
-                                                      asdfa \n
+top20_all  | Count of Top 20 Words Over All Reviews | Many of the top 20 words have an subjectively positive connotation. There is little to no words with a subjectively negative connotation. While there are a majority of positive connotation words, we cannot conclude that these words necessarily are used in a context that yields or prompt a higher rating review.
 
 
 
