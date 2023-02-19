@@ -1,0 +1,1 @@
+To obtain the data set, go to https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products?fbclid=IwAR0yIq8hjHkHZTXoqGVG2xiIQunCDA0JI1ChlZ5XhSZulLyZReaQnheRv-4&select=1429_1.csv and click download in the upper right corner. The dowloaded folder will contain three files. We will only be using the file named "1429_1.csv" throughout this project.
