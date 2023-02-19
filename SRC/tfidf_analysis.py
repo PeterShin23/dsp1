@@ -30,8 +30,6 @@ X_train_counts
 # transform a count matrix to a normalized tf-idf representation (tf-idf transformer)
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-words = X_train_tfidf.get_feature_names()
-words
 
 
 knn = KNeighborsClassifier(n_neighbors=3)
