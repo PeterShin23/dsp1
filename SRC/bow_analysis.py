@@ -132,9 +132,9 @@ d2.head(10).sort_values('difference', ascending=False)
 d2_sorted = d2['difference'].value_counts().sort_index()
 d2_sorted = d2_sorted.to_frame()
 ax = d2_sorted.plot.bar(y='difference', rot=0, legend=False)
-plt.xlabel("Rating Difference (predicted - actual)")
+plt.xlabel("Rating Difference (Predicted - Actual)")
 plt.ylabel("Frequency")
-plt.title("Distribution of Rating Differences (predicted - actual)")
+plt.title("Distribution of Rating Differences (Predicted - Actual)")
 
 
 
