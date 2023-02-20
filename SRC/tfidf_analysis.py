@@ -4,6 +4,7 @@
 Created on Thu Feb 16 20:52:28 2023
 
 @author: lucywang
+@author: petershin
 """
 
 import pandas as pd
@@ -16,7 +17,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.datasets import fetch_20newsgroups
 
 
-data = pd.read_csv('Documents/consumer.csv') 
+data = pd.read_csv('Desktop/1429_1.csv') 
 data = data.sample(frac = 1)
 data = data.rename(columns={"reviews.text": "text", "reviews.rating": "rating"})
 data = data[data['text'].notna() & data['rating'].notna()]

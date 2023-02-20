@@ -49,7 +49,7 @@ predict = knn.predict(bowTest[0:11000])
 d = {'text': test['text'], 
      'actual': test['rating'],
     'predicted': predict}
-    df = pd.DataFrame(data=d)
+df = pd.DataFrame(data=d)
 
 #get accuracy by comparing actual vs prediction values
 total_num = len(df)
@@ -124,7 +124,11 @@ d2 = {'text': test['text'],
      'predicted': predict,
      'difference': predict - test['rating']}
 d2 = pd.DataFrame(data=d2)
-d2
+d2 = d2.groupby('difference')
+d2.head(10).sort_values('difference', ascending=False)
+
+# actual 1 vs predict 5 kind of makes sense looking at the words,
+# but actual 5 vs predict 1 makes almost no sense
 
 d2['difference'].value_counts()
 
