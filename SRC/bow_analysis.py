@@ -126,8 +126,12 @@ d2 = {'text': test['text'],
      'difference': predict - test['rating']}
 d2 = pd.DataFrame(data=d2)
 
+# actual 1 vs predict 5 kind of makes sense looking at the words,
+# but actual 5 vs predict 1 makes almost no sense
+
+
 d2 = d2.groupby('difference')
-d2.head(10).sort_values('difference', ascending=False)
+#d2.head(10).sort_values('difference', ascending=False)
 
 d2_sorted = d2['difference'].value_counts().sort_index()
 d2_sorted = d2_sorted.to_frame()
