@@ -141,6 +141,30 @@ plt.ylabel("Frequency")
 plt.title("Distribution of Rating Differences (Predicted - Actual)")
 
 
+### Logistic Regression
+from sklearn.linear_model import LogisticRegression
+
+logreg = Pipeline([('vect', CountVectorizer()),
+                ('tfidf', TfidfTransformer()),
+                ('clf', LogisticRegression(max_iter=1000)),
+               ])
+
+logreg.fit(X_train, y_train)
+y_pred = logreg.predict(TestData)
+y_test = test['rating']
+
+print('accuracy %s' % accuracy_score(y_pred, y_test))
+# print(classification_report(y_test, y_pred))
+
+d3 = {'text': test['text'], 
+     'actual': test['rating'],
+     'predicted': y_pred,
+     'difference': y_pred - test['rating']}
+d3 = pd.DataFrame(data=d3)
+d3 = d3.groupby('difference')
+d3['difference'].value_counts()
+d3.head(10).sort_values('difference', ascending=False)
+
 
 
 
