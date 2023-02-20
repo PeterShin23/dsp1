@@ -14,6 +14,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.datasets import fetch_20newsgroups
+import matplotlib.pyplot as plt
 
 data = pd.read_csv('Documents/consumer.csv')
 data = data.sample(frac = 1)
@@ -47,7 +48,7 @@ predict = knn.predict(bowTest[0:11000])
 
 
 d = {'text': test['text'], 
-     'actual': test['rating'],
+    'actual': test['rating'],
     'predicted': predict}
 df = pd.DataFrame(data=d)
 
@@ -124,15 +125,20 @@ d2 = {'text': test['text'],
      'predicted': predict,
      'difference': predict - test['rating']}
 d2 = pd.DataFrame(data=d2)
-d2 = d2.groupby('difference')
-d2.head(10).sort_values('difference', ascending=False)
 
 # actual 1 vs predict 5 kind of makes sense looking at the words,
 # but actual 5 vs predict 1 makes almost no sense
 
-d2['difference'].value_counts()
 
+d2 = d2.groupby('difference')
+#d2.head(10).sort_values('difference', ascending=False)
 
+d2_sorted = d2['difference'].value_counts().sort_index()
+d2_sorted = d2_sorted.to_frame()
+ax = d2_sorted.plot.bar(y='difference', rot=0, legend=False)
+plt.xlabel("Rating Difference (Predicted - Actual)")
+plt.ylabel("Frequency")
+plt.title("Distribution of Rating Differences (Predicted - Actual)")
 
 
 
