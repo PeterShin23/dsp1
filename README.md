@@ -22,6 +22,7 @@ reviews.title  | Title/header of review
 Link to data: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products?fbclid=IwAR0yIq8hjHkHZTXoqGVG2xiIQunCDA0JI1ChlZ5XhSZulLyZReaQnheRv-4&select=1429_1.csv
 
 ### Revelant Notes
+- The data set includes 34,000 consumer reviews of Amazon products such as TVs, computers, speakers, headphones, and more. This data set is a subset of a larger data set acquired from Datafiniti, which is a database that obtains product data from websites. Each individual row represents a single amazon review and the columns represent a different attribute regarding that specific review like date, helpfulness score, recommendation, reviewer username, etc. We retrieved this data on KAGGLE (linked above) in the form of a CSV and will be primarily focused on review text and review rating.
 - The whole data set includes three files. We will only use the file named "1429_1.csv" throughout this project
 - We removed all "reviews.text" empty/null entries
 
