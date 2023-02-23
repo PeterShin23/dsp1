@@ -4,7 +4,6 @@
 Created on Thu Feb 16 20:52:28 2023
 
 @author: lucywang
-@author: petershin
 """
 
 import pandas as pd
@@ -17,8 +16,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.datasets import fetch_20newsgroups
 
 
-data = pd.read_csv('Desktop/1429_1.csv') 
-data = data.sample(frac = 1)
+data = pd.read_csv('consumer.csv') 
+data = data.sample(frac = 1, random_state=42)
 data = data.rename(columns={"reviews.text": "text", "reviews.rating": "rating"})
 data = data[data['text'].notna() & data['rating'].notna()]
 train = data.head(int(len(data)*(70/100)))
@@ -33,7 +32,7 @@ tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
 
-knn = KNeighborsClassifier(n_neighbors=3)
+knn = KNeighborsClassifier(n_neighbors=5, random)
 
 # training our classifier ; train_data.target will be having numbers assigned for each category in train data
 clf = knn.fit(X_train_tfidf, train.rating)
