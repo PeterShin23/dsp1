@@ -16,8 +16,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.datasets import fetch_20newsgroups
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('Documents/consumer.csv')
-data = data.sample(frac = 1)
+data = pd.read_csv('consumer.csv')
+data = data.sample(frac = 1, random_state=42)
 data = data.rename(columns={"reviews.text": "text", "reviews.rating": "rating"})
 data = data[data['text'].notna() & data['rating'].notna()]
 train = data.head(int(len(data)*(70/100)))
@@ -41,7 +41,7 @@ bowTest = bowVect.transform(TestData)
 
 from sklearn.neighbors import KNeighborsClassifier
 
-knn = KNeighborsClassifier(n_neighbors = 3)
+knn = KNeighborsClassifier(n_neighbors = 4)
 bowTrain
 knn.fit(bowTrain, y_train)
 predict = knn.predict(bowTest[0:11000])
@@ -65,7 +65,7 @@ acc
 
 
 #do same thing but get rid of "neutral" words from EDA
-data = pd.read_csv('Documents/consumer.csv')
+data = pd.read_csv('consumer.csv')
 data = data.sample(frac = 1)
 data = data.rename(columns={"reviews.text": "text", "reviews.rating": "rating"})
 data = data[data['text'].notna() & data['rating'].notna()]
@@ -97,7 +97,7 @@ bowTest = bowVect.transform(TestData)
 
 from sklearn.neighbors import KNeighborsClassifier
 
-knn = KNeighborsClassifier(n_neighbors = 3)
+knn = KNeighborsClassifier(n_neighbors = 4)
 bowTrain
 knn.fit(bowTrain, y_train)
 predict = knn.predict(bowTest[0:11000])
@@ -126,12 +126,8 @@ d2 = {'text': test['text'],
      'difference': predict - test['rating']}
 d2 = pd.DataFrame(data=d2)
 
-# actual 1 vs predict 5 kind of makes sense looking at the words,
-# but actual 5 vs predict 1 makes almost no sense
-
-
 d2 = d2.groupby('difference')
-#d2.head(10).sort_values('difference', ascending=False)
+d2.head(10).sort_values('difference', ascending=False)
 
 d2_sorted = d2['difference'].value_counts().sort_index()
 d2_sorted = d2_sorted.to_frame()
@@ -140,30 +136,6 @@ plt.xlabel("Rating Difference (Predicted - Actual)")
 plt.ylabel("Frequency")
 plt.title("Distribution of Rating Differences (Predicted - Actual)")
 
-
-### Logistic Regression
-from sklearn.linear_model import LogisticRegression
-
-logreg = Pipeline([('vect', CountVectorizer()),
-                ('tfidf', TfidfTransformer()),
-                ('clf', LogisticRegression(max_iter=1000)),
-               ])
-
-logreg.fit(X_train, y_train)
-y_pred = logreg.predict(TestData)
-y_test = test['rating']
-
-print('accuracy %s' % accuracy_score(y_pred, y_test))
-# print(classification_report(y_test, y_pred))
-
-d3 = {'text': test['text'], 
-     'actual': test['rating'],
-     'predicted': y_pred,
-     'difference': y_pred - test['rating']}
-d3 = pd.DataFrame(data=d3)
-d3 = d3.groupby('difference')
-d3['difference'].value_counts()
-d3.head(10).sort_values('difference', ascending=False)
 
 
 
