@@ -3,9 +3,11 @@
 ## SRC
 
 ### Installing/Building Code
-All source code for this project is located in the SRC folder in this repository....
+All source code exists in the SRC directory. Install all dependencies required by each file that are specified by the imports.
+To run the files in this directory, developers used Spyder IDE.
 
 ### Code Usage
+Users can use, copy, modify, merge, publish, distribute, and sublicense this software, granted that the original MIT License is included in new software.
 
 ## DATA
 
