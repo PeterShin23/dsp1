@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Feb 18 20:52:01 2023
-
 @author: lucywang
 """
 
@@ -41,7 +40,7 @@ bowTest = bowVect.transform(TestData)
 
 from sklearn.neighbors import KNeighborsClassifier
 
-knn = KNeighborsClassifier(n_neighbors = 4)
+knn = KNeighborsClassifier(n_neighbors = 6)
 bowTrain
 knn.fit(bowTrain, y_train)
 predict = knn.predict(bowTest[0:11000])
@@ -97,7 +96,7 @@ bowTest = bowVect.transform(TestData)
 
 from sklearn.neighbors import KNeighborsClassifier
 
-knn = KNeighborsClassifier(n_neighbors = 4)
+knn = KNeighborsClassifier(n_neighbors = 6)
 bowTrain
 knn.fit(bowTrain, y_train)
 predict = knn.predict(bowTest[0:11000])
@@ -135,7 +134,6 @@ ax = d2_sorted.plot.bar(y='difference', rot=0, legend=False)
 plt.xlabel("Rating Difference (Predicted - Actual)")
 plt.ylabel("Frequency")
 plt.title("Distribution of Rating Differences (Predicted - Actual)")
-
 
 
 

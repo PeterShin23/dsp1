@@ -32,7 +32,7 @@ tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
 
-knn = KNeighborsClassifier(n_neighbors=5, random)
+knn = KNeighborsClassifier(n_neighbors=7)
 
 # training our classifier ; train_data.target will be having numbers assigned for each category in train data
 clf = knn.fit(X_train_tfidf, train.rating)
