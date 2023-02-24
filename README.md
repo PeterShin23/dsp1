@@ -27,7 +27,6 @@ Link to data: https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-ama
 - We removed all "reviews.text" empty/null entries
 
 ## FIGURES
-***All figures located in "FIGURES" folder
 Graph | Summary
 ------------- | -------------
 ![alt text](https://github.com/PeterShin23/dsp1/blob/main/FIGURES/top20_all.png?raw=true) | Many of the top 20 words have an subjectively positive connotation, including “great”, “good”, “bought”, “like”, “love” and “well”. There seems to be little to no words with a subjectively negative connotation. While there are a majority of positive connotation words, we cannot conclude that these words necessarily are used in a context that yields or prompt a higher rating review
