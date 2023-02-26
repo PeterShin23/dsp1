@@ -13,6 +13,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 import keras
+import os
 
 from sklearn.model_selection import train_test_split
 
@@ -129,23 +130,36 @@ bow_model, bow_model_history, bow_model_hyper_set = train_model('consumer.csv','
 tfidf_model, tfidf_model_history, tfidf_model_hyper_set = train_model('consumer.csv','tf_idf')
 
 def analyze_model(test, model, history):
+
+    print('Printing results')
+    print('------------------------------------------------------------------')
     print(model.summary())
+    print('------------------------------------------------------------------')
     plot_history(history)
+    print('------------------------------------------------------------------')
+    
     predicted = np.argmax(model.predict(test['text']), axis = 1) + 1
-    test_df = pd.DataFrame([test['text'],test['rating'],predicted], 
-                           columns = ['Review','Rating', 'Predicted Rating'])
+    test_df = pd.DataFrame({'Review':test['text'],'Rating':test['rating'],
+                            'Predicted Rating':predicted})
     test_df['Difference'] = test_df['Rating'] - test_df['Predicted Rating']
     test_df['Prediction Correct'] = test_df['Difference'] == 0
+
     prediction_accuracy = test_df['Prediction Correct'].mean()
     print('Prediction Accuracy of Model: ', prediction_accuracy)
 
-    difference_freq = test['Difference'].value_counts()
-    print(difference_freq)
+    display(test_df)
+    print('------------------------------------------------------------------')
 
-    prediction_by_label = test_df.groupby('Rating')['Prediction Correct'].sum()
-    print(prediction_by_label)
+    difference_freq = test_df['Difference'].value_counts()
+    display(difference_freq)
 
+    prediction_by_label = test_df.groupby('Rating')['Prediction Correct'].mean()
+    display(prediction_by_label)
+    print('------------------------------------------------------------------')
+    print('------------------------------------------------------------------')
 
+_, test_reviews = read_data('consumer.csv')
 
-
+analyze_model(test_reviews, bow_model, bow_model_history)
+analyze_model(test_reviews, tfidf_model, tfidf_model_history)
 
